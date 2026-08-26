@@ -47,16 +47,28 @@ a{text-decoration:none;color:inherit} img{display:block;max-width:100%}
 /* hero — premium wide invitation layout */
 .hero{min-height:100svh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--deep);padding:84px 0 118px}
 .hero-photo{position:absolute;inset:0;overflow:hidden}
-.hero-photo:before{content:"";position:absolute;inset:-24px;background:url("images/couple-07.jpg") center center/cover no-repeat;filter:blur(20px) saturate(.7);transform:scale(1.08);opacity:.52}
-.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center center;z-index:1}
-.hero-photo:after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(42,7,18,.64),rgba(61,9,25,.16) 34%,rgba(54,6,20,.82) 100%),linear-gradient(90deg,rgba(54,6,20,.22),transparent 35%,rgba(54,6,20,.22))}
+.hero-photo:before{
+  content:"";position:absolute;inset:-30px;
+  background:url("images/couple-07.jpg") center/cover no-repeat;
+  filter:blur(28px) saturate(.72);transform:scale(1.08);opacity:.72
+}
+.hero-photo img{
+  position:absolute;z-index:1;left:50%;top:50%;
+  width:100%;height:100%;transform:translate(-50%,-50%);
+  object-fit:contain;object-position:center center
+}
+.hero-photo:after{
+  content:"";position:absolute;inset:0;z-index:2;
+  background:linear-gradient(180deg,rgba(42,7,18,.70),rgba(61,9,25,.16) 32%,rgba(54,6,20,.88) 100%),
+             linear-gradient(90deg,rgba(54,6,20,.28),transparent 28%,transparent 72%,rgba(54,6,20,.28))
+}
 .hero-decor{position:absolute;inset:0;z-index:2;pointer-events:none;background:radial-gradient(circle at 50% 35%,rgba(255,235,190,.12),transparent 30%)}
 .hero-card{position:relative;z-index:3;width:min(1050px,calc(100% - 44px));text-align:center;color:#fff;padding:54px 48px 34px;margin-top:12px}
 .hero-card:before{content:"";position:absolute;inset:10px 4% 0;border:1px solid rgba(234,209,155,.55);border-radius:26px;pointer-events:none;background:linear-gradient(90deg,rgba(70,10,27,.08),rgba(70,10,27,.02),rgba(70,10,27,.08))}
 .hero-kicker{position:relative;font-size:.88rem;letter-spacing:.13em;color:#ffe2a6;font-weight:700}.hero-note{position:relative;font-size:1rem;color:#fff2df;margin-top:12px}
 .hero h1{position:relative;font-size:clamp(3.5rem,7vw,6.6rem);line-height:1.02;margin:20px 0 10px;color:#fff;text-shadow:0 10px 35px rgba(0,0,0,.28)}
 .hero h1 span{color:#f3c969;font-size:.56em;display:inline-block;margin:0 .14em}.hero-title{position:relative;font-size:1.5rem;color:#ffe8c1;margin-top:8px}
-.hero-date{display:none}.hero-location{display:none}.hero-cta{position:relative;display:inline-flex;gap:10px;margin-top:28px;padding:13px 30px;border:1px solid rgba(234,209,155,.72);border-radius:999px;color:#fff;background:rgba(105,18,43,.48);backdrop-filter:blur(10px);transition:.3s}.hero-cta:hover{background:#fff;color:var(--wine);transform:translateY(-2px)}
+.hero-date{position:relative;display:flex;align-items:center;justify-content:center;gap:18px;margin-top:28px;font-size:1.02rem;color:#fff6e8;flex-wrap:wrap}.hero-date i{width:5px;height:5px;background:#f3c969;border-radius:50%}.hero-location{position:relative;display:block;margin-top:12px;font-size:.92rem;color:#f7e6d0}.hero-cta{position:relative;display:inline-flex;gap:10px;margin-top:28px;padding:13px 30px;border:1px solid rgba(234,209,155,.72);border-radius:999px;color:#fff;background:rgba(105,18,43,.48);backdrop-filter:blur(10px);transition:.3s}.hero-cta:hover{background:#fff;color:var(--wine);transform:translateY(-2px)}
 .hero-info{position:absolute;z-index:4;bottom:24px;left:50%;transform:translateX(-50%);width:min(1260px,calc(100% - 44px));display:grid;grid-template-columns:1fr 1fr 1.35fr;background:rgba(66,8,26,.80);border:1px solid rgba(234,209,155,.72);border-radius:22px;backdrop-filter:blur(12px);box-shadow:0 18px 50px rgba(0,0,0,.22)}
 .hero-info-item{padding:18px 26px;display:flex;align-items:center;justify-content:center;gap:13px;color:#fff;border-right:1px solid rgba(234,209,155,.35);font-size:1rem;line-height:1.5}.hero-info-item:last-child{border-right:0}.hero-info-icon{color:#f2c969;font-size:1.35rem}.hero-info-item strong{font-weight:600}.scroll{display:none}
 /* ornate divider */
@@ -89,11 +101,41 @@ footer{padding:55px 0 30px;text-align:center;background:#fffaf1;color:var(--mute
 
 .reveal{opacity:0;transform:translateY(24px);transition:.8s var(--ease)}.reveal.visible{opacity:1;transform:none}
 
+.nav-links.mobile-open{display:flex;position:absolute;top:64px;left:14px;right:14px;flex-direction:column;gap:0;background:#fffaf1;padding:8px 18px;border-radius:16px;box-shadow:0 18px 40px rgba(60,11,25,.15)}.nav-links.mobile-open a{color:var(--wine)}
 @media(max-width:820px){.nav-links{display:none}.menu{display:block}.couple-layout{grid-template-columns:1fr;gap:42px}.couple-photo img{height:min(620px,115vw)}.detail-grid{grid-template-columns:1fr}.family-grid{grid-template-columns:1fr}.section{padding:78px 0}}
 @media(max-width:560px){.container{width:min(100% - 28px,1120px)}.hero-card{padding:100px 12px 75px}.hero-card:before{inset:42px 0 20px}.hero h1{font-size:clamp(3rem,16vw,4.5rem)}.hero-date{font-size:1rem;gap:10px}.hero-date i{display:none}.hero-location{font-size:.82rem}.invite-paper{padding:46px 20px}.invite-paper:before,.invite-paper:after{width:36px;height:36px}.timer{grid-template-columns:repeat(2,1fr)}.time-box:nth-child(2){border-right:0}.time-box:nth-child(-n+2){border-bottom:1px solid rgba(234,209,155,.25)}.time-box{padding:22px 8px}.couple-photo{padding:0 0 12px 12px}.couple-copy{text-align:center}.couple-copy .kicker{text-align:center}.names{justify-content:center}.family-card{padding:27px 20px}.section-head{margin-bottom:38px}}
 @media(max-width:820px){.hero{padding-bottom:190px}.hero-card{padding:46px 22px 28px}.hero-info{bottom:18px;width:min(680px,calc(100% - 28px));grid-template-columns:1fr;border-radius:18px}.hero-info-item{padding:10px 16px;border-right:0;border-bottom:1px solid rgba(234,209,155,.3);font-size:.88rem}.hero-info-item:last-child{border-bottom:0}.hero-photo img{object-position:center center}}
-@media(max-width:560px){.hero{min-height:100svh;padding:76px 0 210px}.hero-card{width:calc(100% - 24px);padding:36px 10px 22px}.hero-card:before{inset:4px 0 0;border-radius:20px}.hero h1{font-size:clamp(3rem,14vw,4.2rem)}.hero-note{font-size:.86rem}.hero-title{font-size:1.15rem}.hero-cta{margin-top:22px;padding:11px 22px}.hero-info{bottom:12px}.hero-info-item{justify-content:flex-start;text-align:left;padding:9px 13px;gap:9px;font-size:.78rem}.hero-info-icon{font-size:1rem}}
+@media(max-width:560px){.hero{min-height:100svh;padding:74px 0 235px}.hero-card{width:calc(100% - 24px);padding:36px 10px 22px}.hero-card:before{inset:4px 0 0;border-radius:20px}.hero h1{font-size:clamp(3rem,14vw,4.2rem)}.hero-date{font-size:.82rem;gap:8px}.hero-location{font-size:.76rem;line-height:1.5}.hero-note{font-size:.86rem}.hero-title{font-size:1.15rem}.hero-cta{margin-top:22px;padding:11px 22px}.hero-info{bottom:12px}.hero-info-item{justify-content:flex-start;text-align:left;padding:9px 13px;gap:9px;font-size:.78rem}.hero-info-icon{font-size:1rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{transition:none}.hero-photo img{animation:none}}
+
+/* Final visual refinement */
+.hero-card{max-width:1040px}
+.hero-card:before{inset:8px 4.5% 0;border-radius:30px}
+.hero h1{letter-spacing:-.02em}
+.hero-info{box-shadow:0 20px 55px rgba(0,0,0,.28)}
+.invitation{padding-top:92px}
+.invite-paper{border-radius:2px}
+.invite-copy{max-width:680px}
+.detail-grid{align-items:stretch}
+.detail-card{min-height:235px;display:flex;flex-direction:column;justify-content:center}
+.couple-copy>p{max-width:560px}
+.family-card{min-height:190px}
+.venue{padding:105px 0}
+.venue p{font-size:1.05rem}
+@media(max-width:820px){
+  .hero-card:before{inset:5px 0 0}
+  .hero-info{bottom:16px}
+  .detail-card{min-height:0}
+}
+@media(max-width:560px){
+  .hero-card{padding-top:34px}
+  .hero h1{margin-top:16px}
+  .hero-info{width:calc(100% - 24px)}
+  .invitation{padding-top:70px}
+  .invite-paper{padding:42px 20px}
+  .couple-section{padding:78px 0}
+  .venue{padding:78px 0}
+}
 </style>
 </head>
 <body>
@@ -122,7 +164,6 @@ footer{padding:55px 0 30px;text-align:center;background:#fffaf1;color:var(--mute
     <div class="hero-title">साखरपुडा सोहळा</div>
     <div class="hero-date"><b>रविवार, दि. १३ / ०९ / २०२६</b><i></i><b>सकाळी ९ ते दुपारी १२.३० वा.</b></div>
     <div class="hero-location">प्रीतिसंगम हॉल · बैलबाजार रोड · मलकापूर, कराड</div>
-    <a class="hero-cta" href="#invitation">आमंत्रण पहा ↓</a>
   </div>
   <div class="hero-info" aria-label="कार्यक्रम तपशील">
     <div class="hero-info-item"><span class="hero-info-icon">◫</span><strong>रविवार, दि. १३ / ०९ / २०२६</strong></div>
@@ -137,8 +178,17 @@ footer{padding:55px 0 30px;text-align:center;background:#fffaf1;color:var(--mute
       <div class="ganesh-line">॥ श्री गजानन प्रसन्न ॥</div>
       <h2>सस्नेह निमंत्रण</h2>
       <div class="ornament"><b>✦</b></div>
-      <p class="invite-copy" style="margin-top:24px">रविवार दि. <strong>१३ / ०९ / २०२६</strong> रोजी सकाळी <strong>९ ते १२.३० वा.</strong> या शुभमुहूर्तावर साखरपुडा सोहळा करण्याचे योजिले आहे. आपण सर्वांनी सहकुटुंब सहपरिवार उपस्थित राहावे ही विनंती.</p>
-      <p class="serif" style="margin-top:25px;color:var(--wine);font-size:1.2rem">आपली उपस्थिती हीच आमच्यासाठी आनंदाची भेट!</p>
+      <p class="invite-copy" style="margin-top:24px">
+        आमच्या आयुष्यातील या सुंदर नव्या पर्वाची सुरुवात आपल्या प्रेमळ उपस्थितीत
+        आणि आशीर्वादाने व्हावी, ही मनःपूर्वक इच्छा.
+      </p>
+      <p class="invite-copy" style="margin-top:10px">
+        या आनंदसोहळ्यास आपण सहकुटुंब सहपरिवार उपस्थित राहून
+        ओमकार व ऋतुजा यांना शुभाशीर्वाद द्यावेत, ही विनंती.
+      </p>
+      <p class="serif" style="margin-top:25px;color:var(--wine);font-size:1.2rem">
+        आपली उपस्थिती हीच आमच्यासाठी आनंदाची भेट!
+      </p>
     </div>
   </div>
 </section>
@@ -160,29 +210,78 @@ footer{padding:55px 0 30px;text-align:center;background:#fffaf1;color:var(--mute
 
 <section class="section details" id="details">
   <div class="container">
-    <div class="section-head reveal"><div class="kicker">कार्यक्रमाची माहिती</div><h2>शुभमुहूर्त व तपशील</h2><p>आपण सर्वांनी सहकुटुंब सहपरिवार उपस्थित राहून वधू-वरास शुभाशीर्वाद द्यावेत, ही मनःपूर्वक विनंती.</p></div>
+    <div class="section-head reveal">
+      <div class="kicker">कार्यक्रमाची माहिती</div>
+      <h2>सोहळ्याचे तपशील</h2>
+      <p>आपल्या सोयीसाठी कार्यक्रमाची आवश्यक माहिती एका ठिकाणी.</p>
+    </div>
     <div class="detail-grid">
-      <article class="detail-card reveal"><div class="detail-icon">✦</div><h3>दिनांक</h3><p>रविवार<br><strong>दि. १३ / ०९ / २०२६</strong></p></article>
-      <article class="detail-card reveal"><div class="detail-icon">◷</div><h3>वेळ</h3><p><strong>सकाळी ९ ते दुपारी १२.३० वा.</strong><br>या शुभमुहूर्तावर</p></article>
-      <article class="detail-card reveal"><div class="detail-icon">⌖</div><h3>स्थळ</h3><p><strong>प्रीतिसंगम हॉल</strong><br>बैलबाजार रोड, मलकापूर,<br>कराड-४१५११०</p><a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Preetisangam%20Hall%2C%20Bailbazar%20Road%2C%20Malkapur%2C%20Karad%20415110" target="_blank" rel="noopener">नकाशावर पहा ↗</a></article>
+      <article class="detail-card reveal">
+        <div class="detail-icon">✦</div>
+        <h3>दिनांक</h3>
+        <p><strong>रविवार</strong><br>१३ सप्टेंबर २०२६</p>
+      </article>
+      <article class="detail-card reveal">
+        <div class="detail-icon">◷</div>
+        <h3>वेळ</h3>
+        <p><strong>सकाळी ९ ते दुपारी १२.३० वा.</strong></p>
+      </article>
+      <article class="detail-card reveal">
+        <div class="detail-icon">⌖</div>
+        <h3>स्थळ</h3>
+        <p><strong>प्रीतिसंगम हॉल</strong><br>बैलबाजार रोड, मलकापूर,<br>कराड-४१५११०</p>
+        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Preetisangam%20Hall%2C%20Bailbazar%20Road%2C%20Malkapur%2C%20Karad%20415110" target="_blank" rel="noopener">नकाशावर पहा ↗</a>
+      </article>
     </div>
   </div>
 </section>
 
 <section class="couple-section">
   <div class="container couple-layout">
-    <div class="couple-photo reveal"><img src="../images/couple-06.jpg" alt="ओमकार आणि ऋतुजा"></div>
+    <div class="couple-photo reveal">
+      <img src="../images/couple-06.jpg" alt="ओमकार आणि ऋतुजा" loading="lazy">
+    </div>
     <div class="couple-copy reveal">
       <div class="kicker">एक सुंदर नात्याची सुरुवात</div>
       <h2>दोन मनं,<br>एक सुंदर सोहळा.</h2>
-      <p>आपल्या प्रेमळ उपस्थितीत हा आनंदाचा क्षण अधिक खास व्हावा, यासाठी आपले मनःपूर्वक स्वागत आहे.</p>
+      <p>
+        प्रेम, आपुलकी आणि कुटुंबीयांच्या आशीर्वादाने सुरू होणाऱ्या
+        या नव्या प्रवासातील आनंदाचा क्षण आपल्या सर्वांसोबत साजरा करण्याचा
+        आम्हाला मनापासून आनंद आहे.
+      </p>
+      <div class="names">
+        <span class="name">ओमकार</span>
+        <span class="heart">♥</span>
+        <span class="name">ऋतुजा</span>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="section families" id="families">
   <div class="container">
-    <div class="section-head reveal"><div class="kicker">उभय परिवार</div><h2>आपले स्नेहांकित</h2></div>
+    <div class="section-head reveal">
+      <div class="kicker">उभय परिवार</div>
+      <h2>स्नेहांकित परिवार</h2>
+      <p>या मंगल प्रसंगी आपल्या सर्वांच्या प्रेमळ उपस्थितीची अपेक्षा.</p>
+    </div>
+    <div class="family-grid">
+      <article class="family-card reveal">
+        <h3>पाटील परिवार</h3>
+        <p>
+          चि. ओमकार<br>
+          (सौ. धनश्री प्रविण पाटील व श्री प्रविण आनंदेराव पाटील यांचे ज्येष्ठ चिरंजीव)
+        </p>
+      </article>
+      <article class="family-card reveal">
+        <h3>जाधव परिवार</h3>
+        <p>
+          चि. सौ. कां. ऋतुजा<br>
+          (श्रीमती उज्वला हणमंत जाधव व कै. हणमंत सोपान जाधव यांच्या कन्या व
+          सूर्यकांत सोपान जाधव यांच्या पुतणी)
+        </p>
+      </article>
+    </div>
     <div class="family-ending">❀ समस्त पाटील व जाधव परिवार ❀</div>
   </div>
 </section>
@@ -191,7 +290,7 @@ footer{padding:55px 0 30px;text-align:center;background:#fffaf1;color:var(--mute
   <div class="container">
     <div class="kicker">आपली वाट पाहत आहोत</div>
     <h2>प्रीतिसंगम हॉल</h2>
-    <p>बैलबाजार रोड, मलकापूर, कराड-४१५११०<br>रविवार, १३ सप्टेंबर २०२६ · सकाळी ९ ते दुपारी १२.३० वा.</p>
+    <p>बैलबाजार रोड, मलकापूर, कराड-४१५११०</p>
     <a class="venue-btn" href="https://www.google.com/maps/search/?api=1&query=Preetisangam%20Hall%2C%20Bailbazar%20Road%2C%20Malkapur%2C%20Karad%20415110" target="_blank" rel="noopener">📍 Google Maps वर स्थळ पहा</a>
   </div>
 </section>
@@ -205,16 +304,20 @@ footer{padding:55px 0 30px;text-align:center;background:#fffaf1;color:var(--mute
   onScroll(); window.addEventListener('scroll',onScroll,{passive:true});
   const menu=document.getElementById('menu');
   const links=document.querySelector('.nav-links');
-  menu.addEventListener('click',()=>{
-    const open=links.classList.toggle('mobile-open');
-    if(open){links.style.cssText='display:flex;position:absolute;top:58px;left:14px;right:14px;flex-direction:column;gap:0;background:#fffaf1;padding:8px 18px;border-radius:16px;box-shadow:0 18px 40px rgba(60,11,25,.15)';links.querySelectorAll('a').forEach(a=>a.style.color='var(--wine)');}
-    else {links.removeAttribute('style');links.querySelectorAll('a').forEach(a=>a.removeAttribute('style'));}
-  });
-  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('mobile-open');links.removeAttribute('style');links.querySelectorAll('a').forEach(x=>x.removeAttribute('style'))}));
+  menu.addEventListener('click',()=>links.classList.toggle('mobile-open'));
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('mobile-open')));
 
   const target=new Date('2026-09-13T09:00:00+05:30').getTime();
   const update=()=>{
-    let d=Math.max(0,target-Date.now());
+    const remaining=target-Date.now();
+    if(remaining<=0){
+      document.getElementById('days').textContent='00';
+      document.getElementById('hours').textContent='00';
+      document.getElementById('mins').textContent='00';
+      document.getElementById('secs').textContent='00';
+      return;
+    }
+    let d=remaining;
     const days=Math.floor(d/86400000); d%=86400000;
     const hours=Math.floor(d/3600000); d%=3600000;
     const mins=Math.floor(d/60000); const secs=Math.floor((d%60000)/1000);
